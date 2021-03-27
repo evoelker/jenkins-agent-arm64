@@ -43,12 +43,10 @@ pipeline {
     }
     post {
         success {
-            steps {
-                build job: 'jenkins-jnlp-agent-arm64',
-                parameters: [
-                    string(name: 'REVNUMBER', value: "${REVNUMBER}")
-                ]
-            }
+            build job: 'jenkins-jnlp-agent-arm64',
+            parameters: [
+                string(name: 'REVNUMBER', value: "${REVNUMBER}")
+            ]
         }
     }
 }
