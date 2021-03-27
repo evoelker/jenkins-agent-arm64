@@ -32,7 +32,17 @@ pipeline {
                 }
             }
         }
-        stage('Start JNLP build') {
+        // stage('Start JNLP build') {
+        //     steps {
+        //         build job: 'jenkins-jnlp-agent-arm64',
+        //         parameters: [
+        //             string(name: 'REVNUMBER', value: "${REVNUMBER}")
+        //         ]
+        //     }
+        // }
+    }
+    post {
+        success {
             steps {
                 build job: 'jenkins-jnlp-agent-arm64',
                 parameters: [
