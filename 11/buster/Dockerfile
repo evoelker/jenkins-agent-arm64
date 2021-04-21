@@ -20,7 +20,7 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
-FROM adoptopenjdk:11-jre-openj9-focal
+FROM arm64v8/adoptopenjdk:11-jre-openj9-focal
 
 ARG VERSION=4.7
 ARG user=jenkins
