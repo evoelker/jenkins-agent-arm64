@@ -22,7 +22,7 @@
 
 FROM arm64v8/adoptopenjdk:11-jre-openj9-focal
 
-ARG VERSION=4.7
+ARG VERSION=4.9
 ARG user=jenkins
 ARG group=jenkins
 ARG uid=1000
