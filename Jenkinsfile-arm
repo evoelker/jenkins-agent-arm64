@@ -12,7 +12,7 @@ pipeline {
             steps {
                 container('dind-build') {
                     script {
-                        app = docker.build("eryk81/jenkins-agent-arm64", "-f ./11/buster/Dockerfile .")
+                        app = docker.build("eryk81/jenkins-agent-arm64", "-f ./11/focal/Dockerfile .")
                         app.inside {
                             sh 'echo $(curl localhost:8080)'
                         }
