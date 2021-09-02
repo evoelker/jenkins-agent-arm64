@@ -20,7 +20,7 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
-FROM arm64v8/adoptopenjdk:11-jre-openj9-focal AS jre-build
+FROM arm64v8/adoptopenjdk:11-jre-openj9-focal
 
 ARG VERSION=4.10
 ARG user=jenkins
@@ -48,7 +48,7 @@ RUN apt-get update \
 
 ENV JAVA_HOME=/opt/java/openjdk
 ENV PATH "${JAVA_HOME}/bin:${PATH}"
-COPY --from=jre-build /opt/java/openjdk $JAVA_HOME
+# COPY --from=jre-build /opt/java/openjdk $JAVA_HOME
 
 USER ${user}
 ENV AGENT_WORKDIR=${AGENT_WORKDIR}
